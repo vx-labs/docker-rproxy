@@ -1,0 +1,5 @@
+#!/bin/bash
+
+render.py /etc/nginx/conf.d/main.template > /etc/nginx/conf.d/default.conf
+cat /etc/nginx/conf.d/default.conf
+exec nginx -g 'daemon off;'
