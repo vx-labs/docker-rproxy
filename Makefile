@@ -1,2 +1,2 @@
 all:
-	docker build -t vxlabs/reverse-proxy .
+	docker build -t vxlabs/rproxy .
