@@ -1,0 +1,11 @@
+sudo: required
+language: c
+services:
+  - docker
+script:
+  - make
+after_success:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+  - docker push vxlabs/rproxy:$TRAVIS_COMMIT;
+  - docker tag vxlabs/rproxy:$TRAVIS_COMMIT vxlabs/rproxy:latest
+  - docker push vxlabs/rproxy:latest
